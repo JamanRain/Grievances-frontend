@@ -1,0 +1,34 @@
+.mimansa-home {
+  background: #ffe6f0;
+  min-height: 100vh;
+  padding: 30px;
+  font-family: 'Comic Sans MS', cursive;
+  color: #c2185b;
+}
+
+input, textarea {
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #ff69b4;
+}
+
+button {
+  background: hotpink;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.grievance-card {
+  background: #fff0f5;
+  padding: 10px;
+  border: 2px dashed #ff69b4;
+  border-radius: 15px;
+  margin-top: 15px;
+}

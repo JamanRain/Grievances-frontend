@@ -1,0 +1,54 @@
+.thank-you-page {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(to bottom, #ffe6f0, #fff0f5);
+  font-family: 'Comic Sans MS', cursive;
+  color: #d63384;
+  min-height: 100vh;
+}
+
+.thank-you-page h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.thank-you-page p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.grievance-history {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.grievance-box {
+  background-color: #ffe4e1;
+  border: 2px dashed #ff69b4;
+  border-radius: 15px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  width: 85%;
+  max-width: 600px;
+  box-shadow: 0 0 15px #ffc0cb;
+  text-align: left;
+  transition: transform 0.3s;
+}
+
+.grievance-box:hover {
+  transform: scale(1.02);
+}
+
+.response-text {
+  color: green;
+  font-style: italic;
+}
+
+.pending-response {
+  color: #ff69b4;
+  font-weight: bold;
+}
+
+

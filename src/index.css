@@ -1,0 +1,8 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Comic Sans MS', cursive;
+  background: linear-gradient(to right, #ffdde1, #ee9ca7);
+  background-size: cover;
+  color: #d63384;
+}

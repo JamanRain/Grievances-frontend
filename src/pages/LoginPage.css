@@ -1,0 +1,46 @@
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #ff69b4; /* Cute heart background */
+  background-size: cover;
+}
+
+.login-box {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 0 15px pink;
+}
+
+input {
+  padding: 10px;
+  font-size: 16px;
+  margin-top: 10px;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid pink;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 30px;
+  font-size: 18px;
+  border: none;
+  background-color: #ff69b4;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.wait-message {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #c2185b;
+  background: #fff0f5;
+  padding: 15px;
+  border-radius: 15px;
+}
+
