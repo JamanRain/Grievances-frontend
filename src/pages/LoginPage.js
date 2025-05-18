@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './LoginPage.css';
 
-function LoginPage({ onLogin, waiting, username }) {
+function LoginPage({ onLogin, waiting, nameTyped }) {
   const [name, setName] = useState('');
 
   const handleClick = () => {
@@ -22,7 +22,7 @@ function LoginPage({ onLogin, waiting, username }) {
         />
         <button onClick={handleClick}>Login 💘</button>
 
-        {waiting && username === "Mimansa" && (
+        {waiting && nameTyped === "Mimansa" && (
           <div className="wait-message">
             <p>💭 Logging you in, please wait my cute complain queen... 😚</p>
             <p>💧 Your lips look cracked, since I can't kiss you just yet to hydrate them, please have some water 😋</p>
