@@ -20,7 +20,7 @@ function RamanDashboard() {
     const response = responses[id];
     if (!response) return;
 
-    axios.put(`http://localhost:5000/api/grievances/${id}/response`, { response })
+    axios.put(`http://localhost:5000/api/grievances/${id}/respond`, { response })
       .then(() => {
         setGrievances(prev => prev.map(g => g._id === id ? { ...g, response } : g));
         setResponses(prev => ({ ...prev, [id]: '' }));
@@ -77,3 +77,4 @@ function RamanDashboard() {
 }
 
 export default RamanDashboard;
+
