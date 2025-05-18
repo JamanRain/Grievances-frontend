@@ -6,34 +6,52 @@ import ThankYouPage from './pages/ThankYouPage';
 
 function App() {
   const [username, setUsername] = useState('');
+  const [tempName, setTempName] = useState('');
   const [waiting, setWaiting] = useState(false);
-  const [loggedIn, setLoggedIn] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
   const handleLogin = (name) => {
-    setUsername(name);
     if (name === "Mimansa") {
-      setWaiting(true);
+      setTempName(name);           // Store temporarily
+      setWaiting(true);            // Show waiting message
       setTimeout(() => {
-        setLoggedIn(true);
+        setUsername(name);         // Login after wait
         setWaiting(false);
-      }, 10000); // 10s delay
+      }, 10000);                   // 10 seconds wait
     } else {
-      setLoggedIn(true);
+      setUsername(name);           // Instant login for others
     }
   };
 
-  if (!loggedIn) {
-    return <LoginPage onLogin={handleLogin} waiting={waiting} username={username} />;
+  const handleGrievanceSubmit = () => {
+    setSubmitted(true);
+  };
+
+  // While no user is fully logged in
+  if (!username) {
+    return <LoginPage onLogin={handleLogin} waiting={waiting} nameTyped={tempName} />;
   }
 
-  if (submitted) {
-    return <ThankYouPage username={username} />;
+  if (username === "Mimansa") {
+    return submitted ? (
+      <ThankYouPage />
+    ) : (
+      <MimansaHome onSubmit={handleGrievanceSubmit} />
+    );
   }
 
-  return username === "Mimansa"
-    ? <MimansaHome onSubmit={() => setSubmitted(true)} />
-    : <RamanDashboard />;
+  if (username === "Raman169") {
+    return <RamanDashboard />;
+  }
+
+  return (
+    <div style={{ padding: "2rem", textAlign: "center" }}>
+      <h2>Sorry 😞</h2>
+      <p>This portal is reserved for Mimansa and Raman only 💖</p>
+    </div>
+  );
 }
 
 export default App;
+
+
