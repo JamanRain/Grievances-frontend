@@ -34,3 +34,4 @@ function LoginPage({ onLogin, waiting, nameTyped }) {
 }
 
 export default LoginPage;
+
