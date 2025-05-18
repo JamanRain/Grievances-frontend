@@ -9,17 +9,29 @@ function MimansaHome({ onSubmit }) {
   const [grievances, setGrievances] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/grievances')
-      .then(res => setGrievances(res.data.filter(g => g.username === 'Mimansa')));
+    axios.get('https://grievances-backend.onrender.com/api/grievances')
+      .then(res => {
+        const mimansaGrievances = res.data.filter(g => g.username === 'Mimansa');
+        setGrievances(mimansaGrievances);
+      })
+      .catch(err => {
+        console.error("Failed to fetch grievances:", err);
+      });
   }, []);
 
   const handleSubmit = () => {
-    axios.post('http://localhost:5000/api/grievances', {
+    axios.post('https://grievances-backend.onrender.com/api/grievances', {
       username: "Mimansa",
       title,
       details,
       severity
-    }).then(() => onSubmit());
+    })
+    .then(() => {
+      onSubmit();
+    })
+    .catch(err => {
+      console.error("Failed to submit grievance:", err);
+    });
   };
 
   return (
@@ -27,10 +39,24 @@ function MimansaHome({ onSubmit }) {
       <h2>💞 Welcome to your very own grievance portal, Mimansa 💖</h2>
       <p>As requested, you can submit your cute grievances here for Raman's viewing pleasure 😋</p>
 
-      <input placeholder="Title 💌" value={title} onChange={e => setTitle(e.target.value)} />
-      <textarea placeholder="What's bothering you? 😔" value={details} onChange={e => setDetails(e.target.value)} />
+      <input 
+        placeholder="Title 💌" 
+        value={title} 
+        onChange={e => setTitle(e.target.value)} 
+      />
+      <textarea 
+        placeholder="What's bothering you? 😔" 
+        value={details} 
+        onChange={e => setDetails(e.target.value)} 
+      />
       <label>Severity (1-10) ❤️:</label>
-      <input type="number" min="1" max="10" value={severity} onChange={e => setSeverity(e.target.value)} />
+      <input 
+        type="number" 
+        min="1" 
+        max="10" 
+        value={severity} 
+        onChange={e => setSeverity(e.target.value)} 
+      />
       <button onClick={handleSubmit}>Submit 💘</button>
 
       <h3>📋 Your Past Grievances</h3>
