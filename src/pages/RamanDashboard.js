@@ -11,7 +11,7 @@ function RamanDashboard() {
   }, []);
 
   const fetchGrievances = () => {
-    axios.get('http://localhost:5000/api/grievances')
+    axios.get('https://grievances-backend.onrender.com/api/grievances')
       .then(res => setGrievances(res.data))
       .catch(err => console.error("Failed to fetch grievances", err));
   };
@@ -20,16 +20,17 @@ function RamanDashboard() {
     const response = responses[id];
     if (!response) return;
 
-    axios.put(`http://localhost:5000/api/grievances/${id}/respond`, { response })
+    axios.put(`https://grievances-backend.onrender.com/api/grievances/${id}/respond`, { response })
       .then(() => {
         setGrievances(prev => prev.map(g => g._id === id ? { ...g, response } : g));
         setResponses(prev => ({ ...prev, [id]: '' }));
-      });
+      })
+      .catch(err => console.error("Failed to submit response", err));
   };
 
   const handleDelete = (id) => {
     if (window.confirm("Are you sure you want to delete this grievance? 💔")) {
-      axios.delete(`http://localhost:5000/api/grievances/${id}`)
+      axios.delete(`https://grievances-backend.onrender.com/api/grievances/${id}`)
         .then(() => {
           setGrievances(prev => prev.filter(g => g._id !== id));
         })
