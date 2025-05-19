@@ -25,7 +25,7 @@ function LoginPage({ onLogin, waiting, nameTyped }) {
         {waiting && nameTyped === "Mimansa" && (
           <div className="wait-message">
             <p>💭 Logging you in, please wait my cute complain queen... 😚</p>
-            <p> No flirting today, Raman is upset and probably crying in his room, holding a pillow😞</p>
+            <p> No flirting today, Raman is upset and probably crying in his room holding a pillow😞</p>
           </div>
         )}
       </div>
