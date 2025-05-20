@@ -23,7 +23,7 @@ function App() {
 
   const handleGrievanceSubmit = () => {
     setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 2000);
+    setTimeout(() => setSubmitted(false), 10000);
   };
 
   if (!username) {
