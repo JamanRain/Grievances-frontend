@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import LoginPage from './LoginPage';
-import MimansaHome from './MimansaHome';
-import RamanDashboard from './RamanDashboard';
-import ThankYouPage from './ThankYouPage';
+import LoginPage from './pages/LoginPage';
+import MimansaHome from './pages/MimansaHome';
+import RamanDashboard from './pages/RamanDashboard';
+import ThankYouPage from './pages/ThankYouPage';
 import './App.css';
 
 function App() {
@@ -43,3 +43,4 @@ function App() {
 }
 
 export default App;
+
