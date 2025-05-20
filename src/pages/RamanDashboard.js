@@ -24,7 +24,7 @@ function RamanDashboard({ username }) {
   };
 
   const handleSendResponse = (id) => {
-    axios.put(`https://grievances-backend.onrender.com/api/grievances/${id}`, {
+    axios.put(`https://grievances-backend.onrender.com/api/grievances/${id}/respond`, {
       response: responses[id]
     })
     .then(() => {
