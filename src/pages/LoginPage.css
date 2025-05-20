@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-color: #ff69b4; /* Cute heart background */
+  background-color: #ff69b4;
   background-size: cover;
 }
 
@@ -35,6 +35,10 @@ button {
   cursor: pointer;
 }
 
+button:hover {
+  background-color: #ff1493;
+}
+
 .wait-message {
   margin-top: 20px;
   font-size: 14px;
@@ -43,6 +47,5 @@ button {
   padding: 15px;
   border-radius: 15px;
 }
-
 
 
