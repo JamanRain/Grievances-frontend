@@ -5,17 +5,14 @@
   min-height: 100vh;
   background-color: #ff69b4; /* Cute heart background */
   background-size: cover;
-  padding: 20px;
 }
 
 .login-box {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.9);
   padding: 40px;
   border-radius: 20px;
   text-align: center;
   box-shadow: 0 0 15px pink;
-  max-width: 400px;
-  width: 100%;
 }
 
 input {
@@ -36,11 +33,6 @@ button {
   color: white;
   border-radius: 20px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #e91e63;
 }
 
 .wait-message {
@@ -52,15 +44,5 @@ button:hover {
   border-radius: 15px;
 }
 
-/* Style for choice buttons */
-.login-box h3 {
-  margin-top: 30px;
-  font-size: 18px;
-  color: #ff1493;
-}
-
-.login-box button + button {
-  margin-left: 10px;
-}
 
 
