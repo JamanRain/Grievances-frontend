@@ -1,27 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import './MimansaHome.css';
-
-function MimansaHome({ onSubmit }) {
+function MimansaHome({ onSubmit, username }) {
   const [title, setTitle] = useState('');
   const [details, setDetails] = useState('');
   const [severity, setSeverity] = useState(1);
   const [grievances, setGrievances] = useState([]);
 
+  const recipient = username === "Mimansa" ? "Raman169" : "Mimansa";
+
   useEffect(() => {
     axios.get('https://grievances-backend.onrender.com/api/grievances')
       .then(res => {
-        const mimansaGrievances = res.data.filter(g => g.username === 'Mimansa');
-        setGrievances(mimansaGrievances);
+        const userGrievances = res.data.filter(g => g.username === username);
+        setGrievances(userGrievances);
       })
       .catch(err => {
         console.error("Failed to fetch grievances:", err);
       });
-  }, []);
+  }, [username]);
 
   const handleSubmit = () => {
     axios.post('https://grievances-backend.onrender.com/api/grievances', {
-      username: "Mimansa",
+      username,
+      recipient,
       title,
       details,
       severity
@@ -36,8 +35,8 @@ function MimansaHome({ onSubmit }) {
 
   return (
     <div className="mimansa-home">
-      <h2>💞 Welcome to your very own grievance portal, Mimansa 💖</h2>
-      <p>As requested, you can submit your cute grievances here for Raman's viewing pleasure 😋</p>
+      <h2>💞 Welcome, {username}! Submit your cute grievance 💖</h2>
+      <p>You can submit your grievances here for {recipient}'s viewing pleasure 😋</p>
 
       <input 
         placeholder="Title 💌" 
@@ -65,13 +64,12 @@ function MimansaHome({ onSubmit }) {
           <h4>{g.title}</h4>
           <p>{g.details}</p>
           <p><b>Severity:</b> {g.severity}</p>
-          <p><b>Raman's Response:</b> {g.response || "Waiting for reply 💌"}</p>
+          <p><b>Response:</b> {g.response || "Waiting for reply 💌"}</p>
         </div>
       ))}
     </div>
   );
 }
 
-export default MimansaHome;
 
 
