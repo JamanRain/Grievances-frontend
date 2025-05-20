@@ -6,8 +6,8 @@ function ThankYouPage() {
   const [grievances, setGrievances] = useState([]);
 
   useEffect(() => {
-    // Fetch all grievances from the backend
-    axios.get('http://localhost:5000/api/grievances')
+    // Fetch all grievances from the deployed backend
+    axios.get('https://grievances-backend.onrender.com/api/grievances')
       .then(res => setGrievances(res.data))
       .catch(err => console.error('Error fetching grievances:', err));
   }, []);
@@ -46,5 +46,3 @@ function ThankYouPage() {
 }
 
 export default ThankYouPage;
-
-
