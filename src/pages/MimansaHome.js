@@ -1,3 +1,7 @@
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import './MimansaHome.css';
+
 function MimansaHome({ onSubmit, username }) {
   const [title, setTitle] = useState('');
   const [details, setDetails] = useState('');
@@ -70,6 +74,8 @@ function MimansaHome({ onSubmit, username }) {
     </div>
   );
 }
+
+export default MimansaHome;
 
 
 
