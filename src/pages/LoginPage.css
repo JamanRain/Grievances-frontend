@@ -48,11 +48,12 @@ button:hover {
   border-radius: 15px;
 }
 .login-logo {
-  width: 80px;        /* Smaller size */
-  height: auto;
-  margin-bottom: 15px;
-  border-radius: 50%;
-  box-shadow: 0 0 6px rgba(255, 105, 180, 0.4);
+  width: 90px;             /* Slightly larger */
+  height: 90px;
+  border-radius: 50%;      /* Circular */
+  object-fit: cover;
+  margin-bottom: 20px;
+  box-shadow: 0 0 8px rgba(255, 105, 180, 0.5); /* Soft pink glow */
   animation: pop 0.6s ease;
 }
 @keyframes pop {
