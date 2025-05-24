@@ -13,7 +13,7 @@ function LoginPage({ onLogin, waiting, nameTyped }) {
     }
 
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/login', {
+      const response = await axios.post(`${process.env.REACT_APP_API_BASE}/api/auth/login`, {
         name,
         password
       });
@@ -49,13 +49,16 @@ function LoginPage({ onLogin, waiting, nameTyped }) {
         {waiting && nameTyped === "Mimansa" && (
           <div className="wait-message">
             <p>💭 Logging you in, please wait my cute complain queen... 😚</p>
-            <p>🌸 Get well soon, Mimansa! The portal(Raman actually) is missing your adorable complaints 💖</p>
+            <p>💧 Your lips look cracked, since I can't kiss you just yet to hydrate them, please have some water 😋</p>
           </div>
         )}
       </div>
     </div>
   );
 }
+
+export default LoginPage;
+
 
 export default LoginPage;
 
