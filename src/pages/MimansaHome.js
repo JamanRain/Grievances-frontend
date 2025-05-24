@@ -8,7 +8,7 @@ function MimansaHome({ onSubmit, username }) {
   const [severity, setSeverity] = useState(1);
   const [grievances, setGrievances] = useState([]);
 
-  const recipient = username === "Mimansa" ? "Raman169" : "Mimansa";
+  const recipient = username === "Mimansa" ? "Raman" : "Mimansa";
 
   useEffect(() => {
     axios.get('https://grievances-backend.onrender.com/api/grievances')
