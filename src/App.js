@@ -18,12 +18,12 @@ function App() {
     setTimeout(() => {
       setUsername(name);
       setWaiting(false);
-    }, 10000);
+    }, 1000);
   };
 
   const handleGrievanceSubmit = () => {
     setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 10000);
+    setTimeout(() => setSubmitted(false), 5000);
   };
 
   if (!username) {
